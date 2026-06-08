@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Typography & Global overrides */
+html, body, [class*="css"], div.stApp {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #F9FAFB !important;
+    color: #374151 !important;
+}
+
+/* App Header & Title styling */
+h1 {
+    font-weight: 700 !important;
+    color: #111827 !important;
+    margin-bottom: 2rem !important;
+    text-align: center !important;
+    border-bottom: 2px solid #E5E7EB !important;
+    padding-bottom: 1rem !important;
+}
+
+h3 {
+    font-weight: 600 !important;
+    color: #111827 !important;
+    margin-bottom: 1.2rem !important;
+    border-left: 4px solid #0F172A !important;
+    padding-left: 10px !important;
+}
+
+h4 {
+    font-weight: 600 !important;
+    color: #111827 !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* Custom Input Widget styling (Streamlit Overrides) */
+div[data-baseweb="input"], div[data-baseweb="textarea"], textarea {
+    border-radius: 10px !important;
+    border: 1px solid #E0E0E0 !important;
+    background-color: #FFFFFF !important;
+    transition: all 0.3s ease !important;
+}
+
+div[data-baseweb="input"]:focus-within, div[data-baseweb="textarea"]:focus-within {
+    border-color: #0F172A !important;
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.15) !important;
+}
+
+/* Primary Button Styling */
+div.stButton > button {
+    width: 100% !important;
+    background-color: #0F172A !important;
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0.75rem 1.5rem !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 6px rgba(15, 23, 42, 0.15) !important;
+}
+
+div.stButton > button:hover {
+    background-color: #1E293B !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(30, 41, 59, 0.25) !important;
+    color: #FFFFFF !important;
+}
+
+div.stButton > button:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Custom Cards for outputs (with Fade-in animation) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-card {
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.5s ease-out forwards;
+    border-left: 6px solid;
+}
+
+.card-supported {
+    background-color: #E6F4EA !important;
+    border: 1px solid #CEEAD6 !important;
+    border-left-color: #137333 !important;
+    color: #137333 !important;
+}
+
+.card-refuted {
+    background-color: #FCE8E6 !important;
+    border: 1px solid #FAD2CF !important;
+    border-left-color: #C5221F !important;
+    color: #C5221F !important;
+}
+
+.card-nei {
+    background-color: #E8F0FE !important;
+    border: 1px solid #D2E3FC !important;
+    border-left-color: #1A73E8 !important;
+    color: #1A73E8 !important;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Custom Progress Bars for probability display */
+.progress-container {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    color: #374151;
+}
+
+.progress-bar-bg {
+    background-color: #E5E7EB;
+    border-radius: 9999px;
+    height: 8px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    border-radius: 9999px;
+    transition: width 0.8s ease-in-out;
+}
+
+.fill-supported {
+    background-color: #137333 !important;
+}
+
+.fill-refuted {
+    background-color: #C5221F !important;
+}
+
+.fill-nei {
+    background-color: #1A73E8 !important;
+}
